@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
-  View, Text, TouchableOpacity, StyleSheet,
-  SafeAreaView, StatusBar, Platform,
+  View, Text, TouchableOpacity, StyleSheet, StatusBar,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import { Colors, FontSize, FontWeight, Spacing, Radius, Shadow } from '../../constants/theme';
@@ -25,6 +25,7 @@ export default function AppShell({ title, children, headerRight, hideAvatar }: A
   return (
     <SafeAreaView style={[styles.root, { backgroundColor: theme.bg }]}>
       <StatusBar
+        translucent={false}
         barStyle={isDark ? 'light-content' : 'dark-content'}
         backgroundColor={theme.surface}
       />
@@ -32,16 +33,19 @@ export default function AppShell({ title, children, headerRight, hideAvatar }: A
       {/* Top bar */}
       <View style={[styles.topbar, {
         backgroundColor: theme.surface,
-        borderBottomColor: theme.border,
+        borderBottomColor: isDark ? Colors.primary + '40' : theme.border,
       }]}>
         {/* Hamburger */}
         <TouchableOpacity
           onPress={() => setSidebarOpen(true)}
-          style={[styles.menuBtn, { backgroundColor: theme.surfaceAlt, borderColor: theme.border }]}
+          style={[styles.menuBtn, {
+            backgroundColor: Colors.primaryLight,
+            borderColor: Colors.primary,
+          }]}
           activeOpacity={0.7}
           accessibilityLabel="Open navigation menu"
         >
-          <MenuIcon color={theme.text} />
+          <MenuIcon color={Colors.primaryDark} />
         </TouchableOpacity>
 
         {/* Title */}
@@ -72,9 +76,9 @@ export default function AppShell({ title, children, headerRight, hideAvatar }: A
 
 function MenuIcon({ color }: { color: string }) {
   return (
-    <View style={{ gap: 4, padding: 2 }}>
+    <View style={{ gap: 5, padding: 2 }}>
       {[0, 1, 2].map(i => (
-        <View key={i} style={{ width: 16, height: 1.5, backgroundColor: color, borderRadius: 1 }} />
+        <View key={i} style={{ width: 18, height: 2.5, backgroundColor: color, borderRadius: 2 }} />
       ))}
     </View>
   );
@@ -85,12 +89,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   topbar: {
-    height: 52,
+    height: 56,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: Spacing.lg,
     gap: Spacing.md,
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 1,
     ...Shadow.sm,
   },
   menuBtn: {
