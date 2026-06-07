@@ -82,7 +82,7 @@ export default function OnboardingScreen() {
             <Text style={{ fontSize: 42 }}>🧬</Text>
           </View>
           <Text style={{ fontSize: 32, fontWeight: FontWeight.bold, color: '#fff', textAlign: 'center', marginBottom: 12 }}>
-            Personal Manager
+            ZAZU
           </Text>
           <Text style={{ fontSize: FontSize.base, color: 'rgba(255,255,255,0.7)', textAlign: 'center', lineHeight: 24, marginBottom: Spacing.xxxl * 2 }}>
             Your private health companion.{'\n'}All data stays on your device.

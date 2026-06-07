@@ -88,7 +88,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             {profile?.name || 'User'}
           </Text>
           <Text style={{ fontSize: FontSize.xs, color: theme.textSecondary }}>
-            Personal Manager · v1.0
+            ZAZU · v1.0
           </Text>
         </View>
 

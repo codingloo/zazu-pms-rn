@@ -74,7 +74,7 @@ export default function LockScreen() {
           Welcome back, {name.split(' ')[0]}
         </Text>
         <Text style={{ fontSize: FontSize.sm, color: theme.textSecondary, marginBottom: Spacing.xxxl }}>
-          Personal Manager
+          ZAZU
         </Text>
 
         {locked ? (

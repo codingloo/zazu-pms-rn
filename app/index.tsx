@@ -87,10 +87,10 @@ export default function DashboardScreen() {
           7-day health averages
         </Text>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: Spacing.lg }}>
-          <MetricCard icon="👟" label="Steps" value={stats ? stats.avgSteps.toLocaleString() : '—'} color={Colors.primary} theme={theme} />
-          <MetricCard icon="😴" label="Sleep" value={stats ? `${stats.avgSleep.toFixed(1)}h` : '—'} color="#7F77DD" theme={theme} />
-          <MetricCard icon="💧" label="Water" value={stats ? `${stats.avgWater.toFixed(1)}L` : '—'} color={Colors.info} theme={theme} />
-          <MetricCard icon="🏋️" label="Workouts" value={stats ? `${stats.workoutDays}/7` : '—'} color={Colors.accentDark} theme={theme} />
+          <MetricCard icon="👟" label="Steps" value={stats ? stats.avgSteps.toLocaleString() : '—'} color={Colors.primary} />
+          <MetricCard icon="😴" label="Sleep" value={stats ? `${stats.avgSleep.toFixed(1)}h` : '—'} color="#7F77DD" />
+          <MetricCard icon="💧" label="Water" value={stats ? `${stats.avgWater.toFixed(1)}L` : '—'} color={Colors.info} />
+          <MetricCard icon="🏋️" label="Workouts" value={stats ? `${stats.workoutDays}/7` : '—'} color={Colors.accentDark} />
         </View>
 
         {/* Today snapshot */}
