@@ -1,6 +1,11 @@
 module.exports = {
   expo: {
-    name: "Personal Manager",
+    extra: {
+      eas: {
+        "projectId": "e8295ddb-c85c-4973-abb5-9010e8f349de"
+      },
+    },
+    name: "Zazu Personal Manager",
     slug: "personal-manager",
     version: "1.0.0",
     orientation: "portrait",
@@ -27,7 +32,7 @@ module.exports = {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#085041"
       },
-      package: "com.yourname.personalmanager",
+      package: "com.codingloo.zazu",
       permissions: ["USE_BIOMETRIC", "USE_FINGERPRINT"]
     },
 
@@ -35,7 +40,6 @@ module.exports = {
       bundler: "metro",
       favicon: "./assets/favicon.png"
     },
-
     plugins: [
       "expo-router",
       "expo-sqlite",
@@ -44,6 +48,14 @@ module.exports = {
         "expo-local-authentication",
         {
           faceIDPermission: "Allow Personal Manager to use Face ID."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          android: {
+            kotlinVersion: "1.9.25"
+          }
         }
       ]
     ],
