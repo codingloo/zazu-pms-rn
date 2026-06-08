@@ -55,11 +55,19 @@ module.exports = {
         "expo-build-properties",
         {
           android: {
-            kotlinVersion: "1.9.25"
+            kotlinVersion: "2.1.21"
           }
         }
       ]
     ],
+
+    updates: {
+      url: "https://u.expo.dev/e8295ddb-c85c-4973-abb5-9010e8f349de"
+    },
+
+    runtimeVersion: {
+      policy: "appVersion"
+    },
 
     experiments: {
       typedRoutes: true
